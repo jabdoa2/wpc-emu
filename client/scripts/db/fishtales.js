@@ -2,12 +2,20 @@
 
 module.exports = {
   name: 'WPC-Fliptronics: Fish Tales',
-  version: 'P-4',
+  version: 'L-5',
   rom: {
-    u06: 'ft_p4.u6',
+    u06: 'FSHTL_5.ROM',
     u14: 't2_u14.l3',
     u15: 't2_u15.l3',
     u18: 't2_u18.l3',
+    patch: [
+      {
+        source: 'https://bitbucket.org/tacotown/pinfixes/',
+        offset: 0x6C6A,
+        expected: 0x25,
+        replace: 0x14,
+      }
+    ]
   },
   playfield: {
     //size must be 200x400, lamp positions according to image
